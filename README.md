@@ -26,13 +26,13 @@ SIEM Dashboard Snapshot: <---
 
 Skills Demonstrated:
 
-SIEM deployment & administration (Wazuh) Custom detection rule / alert logic Log monitoring & analysis Windows and Linux system administration Virtual network design and segmentation Self-directed troubleshooting using vendor docs, community resources, & AI
+SIEM deployment & administration (Wazuh) Custom detection rule / alert logic Log monitoring & analysis Windows and Linux system administration Virtual network design and segmentation Self-directed troubleshooting using vendor docs, community resources, & AI 
 
 Tools Used: Wazuh, Kali Linux, Wireshark, Nmap, tcpdump, VMware Workstation, Windows, Linux, Ubuntu
 
 Notes / Lessons Learned:
 
-Midway through this build, the Dashboard started throwing "API connection down or inaccessible" errors, it could no longer talk to the Manager. I initially assumed the Dashboard configuration was the problem and spent hours poking at "wazuh.yml", uninstalling and installing packages, updating OS systems, and tearing down my configuration before checking the Manager side. With the help of AI I came to the solution of Running "systemctl status wazuh-manager" and tailing "/var/ossec/logs/api.log" showing the real issue: the "wazuh-apid service" had crashed after I rotated the "wazuh-wui" API password without updating the matching entry in the Dashboards config. Every auth attempt was failing until it hit a login attempt lockout on top of it. Next time I'd verify any credential change with a "raw curl call" before touching the Dashboard at all. Bigger lesson: The error shows up wherever the symptom is visible, not where the cause is you have to walk the chain of processes. (Dashboard -> API -> Manager daemons -> disk/permissions) instead of fixating on the layer complaining loudest.
+Midway through this build, the Dashboard started throwing "API connection down or inaccessible" errors, the agent could no longer talk to the Manager. I initially assumed the Dashboard configuration was the problem and spent hours poking at "wazuh.yml", uninstalling and installing packages, updating OS systems, and dismantling my configuration before checking the Manager side. With the help of AI I came to the solution of Running "systemctl status wazuh-manager" and tailing "/var/ossec/logs/api.log" showing the real issue: the "wazuh-apid service" had crashed after I rotated the "wazuh-wui" API password without updating the matching entry in the Dashboards config. Every auth attempt was failing until it hit a login attempt lockout on top of it. Next time I'd verify any credential change with a "raw curl call" before touching the Dashboard at all. Bigger lesson: The error shows up wherever the symptom is visible, not where the cause is you have to walk the chain of processes. (Dashboard -> API -> Manager daemons -> disk/permissions) instead of fixating on the layer complaining loudest.
 
 General lessons learned
 
