@@ -14,6 +14,8 @@ Hypervisor: VMware Workstation SIEM: Wazuh (Manager + Indexer + Dashboard) Endpo
 
 What I Built:
 
+![image alt](https://github.com/cybersobby-maker/Wazuh-SIEM-Dashboard/blob/main/SIEM%20Dashboard%20(View).png?raw=true)
+
 Deployed and configured Wazuh as the central log collection and correlation point for all endpoints in the lab. Wrote custom detection rules and alert workflows for indicators such as repeated failed login attempts and privilege escalation events. Built a multi-machine Windows + Linux environment to mirror a realistic small-network topology for testing. Hardened endpoint and network configurations based on vendor documentation and security best practices. Practiced log analysis and threat detection workflows end-to-end: generate an event -> confirm it's captured -> confirm it correlates/alerts correctly -> tune the rule if noisy or missed.
 
 Example Problem: Detecting Repeated Failed Logins
