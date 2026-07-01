@@ -12,8 +12,6 @@ Lab Architecture:
 
 Hypervisor: VMware Workstation SIEM: Wazuh (Manager + Indexer + Dashboard) Endpoints: Windows 10/11 VM, Ubuntu/Linux VM, running the Wazuh agent Network: Isolated virtual network (host-only/NAT) to safely simulate attacker behavior without touching the host machine or internet-facing systems
 
-Visual Diagram: <---
-
 What I Built:
 
 Deployed and configured Wazuh as the central log collection and correlation point for all endpoints in the lab. Wrote custom detection rules and alert workflows for indicators such as repeated failed login attempts and privilege escalation events. Built a multi-machine Windows + Linux environment to mirror a realistic small-network topology for testing. Hardened endpoint and network configurations based on vendor documentation and security best practices. Practiced log analysis and threat detection workflows end-to-end: generate an event -> confirm it's captured -> confirm it correlates/alerts correctly -> tune the rule if noisy or missed.
@@ -21,8 +19,6 @@ Deployed and configured Wazuh as the central log collection and correlation poin
 Example Problem: Detecting Repeated Failed Logins
 
 Simulated repeated failed SSH/RDP login attempts against an endpoint. Confirmed Wazuh agent forwarded the relevant auth logs to the manager. Built/adjusted a custom rule to flag the threshold of failed attempts within a time window. Verified the alert fired correctly in the Wazuh dashboard, including source IP, target account, and timestamp.
-
-SIEM Dashboard Snapshot: <---
 
 Skills Demonstrated:
 
