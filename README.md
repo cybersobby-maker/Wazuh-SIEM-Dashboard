@@ -12,9 +12,9 @@ Lab Architecture:
 
 Hypervisor: VMware Workstation SIEM: Wazuh (Manager + Indexer + Dashboard) Endpoints: Windows 10/11 VM, Ubuntu/Linux VM, running the Wazuh agent Network: Isolated virtual network (host-only/NAT) to safely simulate attacker behavior without touching the host machine or internet-facing systems
 
-What I Built:
+SIEM Workflow Visual:
+![image alt](https://github.com/cybersobby-maker/Wazuh-SIEM-Dashboard/blob/main/SIEM%20(Flowchart).png?raw=true)
 
-![image alt](https://github.com/cybersobby-maker/Wazuh-SIEM-Dashboard/blob/main/SIEM%20Dashboard%20(View).png?raw=true)
 
 Deployed and configured Wazuh as the central log collection and correlation point for all endpoints in the lab. Wrote custom detection rules and alert workflows for indicators such as repeated failed login attempts and privilege escalation events. Built a multi-machine Windows + Linux environment to mirror a realistic small-network topology for testing. Hardened endpoint and network configurations based on vendor documentation and security best practices. Practiced log analysis and threat detection workflows end-to-end: generate an event -> confirm it's captured -> confirm it correlates/alerts correctly -> tune the rule if noisy or missed.
 
@@ -27,6 +27,9 @@ Skills Demonstrated:
 SIEM deployment & administration (Wazuh) Custom detection rule / alert logic Log monitoring & analysis Windows and Linux system administration Virtual network design and segmentation Self-directed troubleshooting using vendor docs, community resources, & AI 
 
 Tools Used: Wazuh, Kali Linux, Wireshark, Nmap, tcpdump, VMware Workstation, Windows, Linux, Ubuntu
+
+SIEM Dashboard Visual:
+![image alt](https://github.com/cybersobby-maker/Wazuh-SIEM-Dashboard/blob/main/SIEM%20Dashboard%20(View).png?raw=true)
 
 Notes / Lessons Learned:
 
